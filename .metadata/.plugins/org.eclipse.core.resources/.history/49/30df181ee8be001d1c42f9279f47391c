@@ -1,0 +1,18 @@
+<!-- ch07/request2.jsp -->
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%
+	String protocol = request.getProtocol();
+	int port = request.getLocalPort();
+	//ip값
+	String remoteAddr = request.getRemoteAddr();
+	String uri = request.getRequestURI();
+	StringBuffer url = request.getRequestURL();
+	//? 이후에 요청 조건값
+	String query = request.getQueryString();
+%>
+protocol : <%=protocol%><br>
+port : <%=port%><br>
+remoteAddr : <%=remoteAddr%><br>
+uri : <%=uri%><br>
+url : <%=url%><br>
+query : <%=query%>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Team Mgr</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+  function send() {
+	//alert(1);
+	f=document.frm;
+	//f=document.forms[0];
+	f.action= "team.jsp";
+	f.submit();
+}
+</script>
+</head>
+<body>
+<h1>Team</h1>
+<form name="frm" action="team.jsp">
+num : <input name="num" value="1"><br/>
+name : <input name="name" value="조영문"><br/>
+city : <input name="city" value="부산"><br/>
+age : <input name="age" value="27"><br/>
+team : <input name="team" value="팀HJ"><br/>
+<!-- button type은 반드시 onclick 실행 
+	button은 자바스크립트의 Onclick이벤트리스너 function으로 가야한다.-->
+<input type="button" value="Send" onclick="send()">
+</form>
+</body>
+</html>
+
+
+
+

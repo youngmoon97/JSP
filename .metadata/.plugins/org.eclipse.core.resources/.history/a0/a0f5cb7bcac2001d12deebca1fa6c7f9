@@ -1,0 +1,37 @@
+<%@page import="ch09.TeamBean"%>
+<%@page import="java.util.Vector"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%
+	try{
+		String _driver = "com.mysql.cj.jdbc.Driver",
+		_url = "jdbc:mysql://localhost:3306/mydb2?characterEncoding=UTF-8&serverTimezone=UTC",
+		_user = "root",
+		_password = "1234";	
+		Class.forName(_driver); // Driver 객체 생성
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		con = DriverManager.getConnection(_url,_user,_password);
+		String sql = "select * from tblTeam";
+		pstmt = con.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		Vector<TeamBean> vlist = new Vector<TeamBean>();
+		while(rs.next()) {
+			TeamBean bean = new TeamBean();
+			bean.setNum(rs.getInt("num"));
+			bean.setName(rs.getString("name"));
+			bean.setCity(rs.getString("city"));
+			bean.setAge(rs.getInt("age"));
+			bean.setTeam(rs.getString("team"));
+			vlist.addElement(bean);
+		}
+		out.print(vlist.size());
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+%>

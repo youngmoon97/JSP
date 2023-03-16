@@ -1,0 +1,7 @@
+<%@page import="ch05.MyUtil"%>
+<%@page contentType="text/html; charset=UTF-8"%>
+<jsp:useBean id="mgr" class="ch09.TeamMgr"/>>
+<%
+	int num = MyUtil.parseInt(request,"num");
+	TeamBean bean = mgr.g
+%>

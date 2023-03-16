@@ -1,0 +1,22 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="ch09.DBConnectionMgr"><rhs name\="ch09.DBConnectionMgr"/></lhs><lhs name\="java.util.List"><rhs name\="java.util.Vector"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.Vector"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.Vector"/></lhs><lhs name\="java.util.RandomAccess"><rhs name\="java.util.Vector"/></lhs><lhs name\="java.lang.Cloneable"><rhs name\="java.util.Vector"/></lhs><lhs name\="java.util.AbstractList"><rhs name\="java.util.Vector"/></lhs><lhs name\="java.util.AbstractCollection"><rhs name\="java.util.Vector"/></lhs><lhs name\="java.util.Vector"><rhs name\="java.util.Vector"/></lhs><lhs name\="ch09.TeamBean"><rhs name\="ch09.TeamBean"/></lhs></history>
+content_assist_number_of_computers=17
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=22
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="java" deleted\="false" description\="SELECT" enabled\="true" name\="db1">Connection con \= null;&\#13;\r\n\tPreparedStatement pstmt \= null;&\#13;\r\n\tResultSet rs \= null;&\#13;\r\n\tString sql \= null;&\#13;\r\n\ttry {&\#13;\r\n\t\tcon \= pool.getConnection();&\#13;\r\n\t\tsql \= "";&\#13;\r\n\t\tpstmt \= con.prepareStatement(sql);&\#13;\r\n\t\trs \= pstmt.executeQuery();&\#13;\r\n&\#13;\r\n\t} catch (Exception e) {&\#13;\r\n\t\te.printStackTrace();&\#13;\r\n\t} finally {&\#13;\r\n\t\tpool.freeConnection(con, pstmt, rs);&\#13;\r\n\t}&\#13;\r\n\treturn;</template><template autoinsert\="true" context\="java" deleted\="false" description\="insert / update /delete" enabled\="true" name\="db2">Connection con \= null;&\#13;\r\n\tPreparedStatement pstmt \= null;&\#13;\r\n\tString sql \= null;&\#13;\r\n\ttry {&\#13;\r\n\t\tcon \= pool.getConnection();&\#13;\r\n\t\tsql \= "";&\#13;\r\n\t\tpstmt \= con.prepareStatement(sql);&\#13;\r\n&\#13;\r\n\t\tpstmt.executeUpdate();&\#13;\r\n\t} catch (Exception e) {&\#13;\r\n\t\te.printStackTrace();&\#13;\r\n\t} finally {&\#13;\r\n\t\tpool.freeConnection(con, pstmt);&\#13;\r\n\t}&\#13;\r\n\treturn;</template></templates>
+sourceHoverBackgroundColor=47,47,47
+spelling_ignore_ampersand_in_properties=true
+spelling_ignore_digits=true
+spelling_ignore_java_strings=true
+spelling_ignore_mixed=true
+spelling_ignore_non_letters=true
+spelling_ignore_sentence=true
+spelling_ignore_single_letters=true
+spelling_ignore_upper=true
+spelling_ignore_urls=true
+spelling_locale_initialized=true
+spelling_user_dictionary_encoding=UTF-8
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

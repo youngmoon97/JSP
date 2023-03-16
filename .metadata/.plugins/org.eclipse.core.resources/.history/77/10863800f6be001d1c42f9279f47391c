@@ -1,0 +1,8 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%
+	String id = request.getParameter("id");
+	String pwd = request.getParameter("pwd");
+	//세션에 idKey라는 이름으로 id를 저장
+	session.setAttribute("idKey", id);
+	session.setMaxInactiveInterval(60*3); //3분
+%>
