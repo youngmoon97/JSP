@@ -43,7 +43,7 @@
 			}//for
 	%>
 </table><p>
-<a href="teamInsert.html">INSERT</a>
+<a href="teamInsert.jsp">INSERT</a>
 </div>
 </body>
 </html>

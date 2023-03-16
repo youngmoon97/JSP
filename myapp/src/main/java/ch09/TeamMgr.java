@@ -138,4 +138,27 @@ public class TeamMgr {
 			pool.freeConnection(con, pstmt);
 		}
 	}
+	//입력된 팀 이름 리스트
+	public Vector<String> teamList(){
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		Vector<String> vlist = new Vector<String>();
+		try {
+			con = pool.getConnection();
+			sql = "select distinct team from tblTeam";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				vlist.addElement(rs.getString(1));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return vlist;
+	}
+
 }
