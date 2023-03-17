@@ -10,6 +10,8 @@
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="java.util.Vector"/>
     <fullyQualifiedTypeName name="ch09.TeamBean"/>
+    <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="ch09.TeamMgr"/>
+    <fullyQualifiedTypeName name="guestbook.GuestBookBean"/>
 </qualifiedTypeNameHistroy>

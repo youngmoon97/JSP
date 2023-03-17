@@ -17,3 +17,6 @@ DELETE FROM tblteam WHERE num=4;
 SELECT * 
 FROM tblteam
 WHERE num=1;
+
+SELECT DISTINCT team
+FROM tblteam;

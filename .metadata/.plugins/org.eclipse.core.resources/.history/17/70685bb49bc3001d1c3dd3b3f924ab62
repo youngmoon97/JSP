@@ -1,0 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%
+	session.removeAttribute("pbean");
+	session.invalidate();
+	response.sendRedirect("scopeBean.jsp");
+%>

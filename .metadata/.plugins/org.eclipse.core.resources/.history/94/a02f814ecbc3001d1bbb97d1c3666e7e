@@ -1,0 +1,4 @@
+<!-- guestbook/loginProc.jsp -->
+<%@page contentType="text/html;charset=UTF-8"%>
+<jsp:useBean id="mgr" class="guestbook.GusetBookMgr"/>
+<jsp:useBean id="login" class="guestbook.GusetBookBean" scope="session"/>

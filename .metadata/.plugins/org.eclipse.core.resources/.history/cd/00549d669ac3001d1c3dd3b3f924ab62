@@ -1,0 +1,8 @@
+<!-- ch09/scopeBean.jsp -->
+<%@ page contentType="text/html; charset=UTF-8"%>
+<jsp:useBean id="pbean" class="ch09.ScopeBean" scope="page"/>
+<jsp:useBean id="sbean" class="ch09.ScopeBean" scope="session"/>
+<!-- 
+	scope가 session이면 id가 동일한 객체가 있는지 없는지 검색
+	-> 없으면 새롭게 생성하지만 있으면 그 객체를 재사용
+ -->

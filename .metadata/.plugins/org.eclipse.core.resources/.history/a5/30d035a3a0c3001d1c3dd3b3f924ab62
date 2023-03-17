@@ -1,0 +1,6 @@
+<!-- ch12/cookCookie.jsp -->
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%
+	String cookieName = "myCookie";
+	//쿠키를 생설
+%>
