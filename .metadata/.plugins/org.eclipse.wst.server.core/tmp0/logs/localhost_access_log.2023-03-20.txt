@@ -1,0 +1,16 @@
+127.0.0.1 - - [20/Mar/2023:09:09:42 +0900] "GET / HTTP/1.1" 404 807
+127.0.0.1 - - [20/Mar/2023:09:09:42 +0900] "GET /myapp/guestbook/login.jsp HTTP/1.1" 200 636
+127.0.0.1 - - [20/Mar/2023:09:09:42 +0900] "GET /myapp/guestbook/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/Mar/2023:09:09:42 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+127.0.0.1 - - [20/Mar/2023:09:09:46 +0900] "POST /myapp/guestbook/loginProc.jsp HTTP/1.1" 200 165
+127.0.0.1 - - [20/Mar/2023:09:09:47 +0900] "GET /myapp/guestbook/login.jsp HTTP/1.1" 200 364
+127.0.0.1 - - [20/Mar/2023:09:09:48 +0900] "GET /myapp/guestbook/showGuestBook.jsp HTTP/1.1" 200 4396
+127.0.0.1 - - [20/Mar/2023:09:09:48 +0900] "GET /myapp/guestbook/img/face.bmp HTTP/1.1" 304 -
+127.0.0.1 - - [20/Mar/2023:09:09:48 +0900] "GET /myapp/guestbook/img/email.bmp HTTP/1.1" 304 -
+127.0.0.1 - - [20/Mar/2023:09:09:48 +0900] "GET /myapp/guestbook/img/hp.bmp HTTP/1.1" 304 -
+127.0.0.1 - - [20/Mar/2023:09:09:50 +0900] "POST /myapp/guestbook/postGuestBookProc.jsp HTTP/1.1" 302 -
+127.0.0.1 - - [20/Mar/2023:09:09:50 +0900] "GET /myapp/guestbook/showGuestBook.jsp HTTP/1.1" 200 5300
+127.0.0.1 - - [20/Mar/2023:09:09:52 +0900] "GET /myapp/guestbook/updateGuestBook.jsp?num=13 HTTP/1.1" 200 1671
+127.0.0.1 - - [20/Mar/2023:09:09:56 +0900] "GET /myapp/guestbook/deleteGuestBook.jsp?num=13 HTTP/1.1" 302 -
+127.0.0.1 - - [20/Mar/2023:09:09:56 +0900] "GET /myapp/guestbook/showGuestBook.jsp HTTP/1.1" 200 4396
+127.0.0.1 - - [20/Mar/2023:09:10:16 +0900] "GET /myapp/guestbook/login.jsp HTTP/1.1" 200 364

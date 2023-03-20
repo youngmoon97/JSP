@@ -1,0 +1,25 @@
+<!-- updateGuestBook.jsp -->
+<%@page import="guestbook.MyUtil"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<jsp:useBean id="mgr" class="guestbook.GuestBookMgr"/>
+<%
+	int num =0;
+	String id;
+	String contents;
+	String ip; 
+	String date;
+	String time
+	if(request.getParameter("num")!=null){
+		num=MyUtil.parseInt(request, "num");
+		id = request.getParameter("id");
+		contents= request.getParameter("contents");
+		ip = request.getParameter("ip");
+		date = request.getParameter("date");
+		time = request.getParameter("time");
+	}
+%>
+id : <%=id %>
+contents : <%=contents%>
+ip : <%=ip%>
+date : <%=date %>
+time : <%=time %>

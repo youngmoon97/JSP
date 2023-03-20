@@ -1,6 +1,0 @@
-package ch09;
-
-public class SimpleBean {
-	private String msg;
-	private int cnt;
-}
