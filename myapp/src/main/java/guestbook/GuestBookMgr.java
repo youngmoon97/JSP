@@ -151,7 +151,7 @@ public class GuestBookMgr {
 				pstmt = con.prepareStatement(sql);
 			}else if(grade.equals("0")) { //일반사용자
 				sql = "select * from tblGuestBook "
-					+ " where id = ? or secret = '0' order by num desc";
+						+ " where id = ? or secret = '0' order by num desc";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, id);
 			}

@@ -7,11 +7,13 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="ch09.DBConnectionMgr"/>
     <fullyQualifiedTypeName name="java.awt.font.GlyphVector"/>
+    <fullyQualifiedTypeName name="ch09.TeamBean"/>
+    <fullyQualifiedTypeName name="ch09.TeamMgr"/>
+    <fullyQualifiedTypeName name="guestbook.GuestBookBean"/>
+    <fullyQualifiedTypeName name="guestbook.DBConnectionMgr"/>
+    <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="guestbook.CommentBean"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="ch09.TeamBean"/>
-    <fullyQualifiedTypeName name="ch09.TeamMgr"/>
-    <fullyQualifiedTypeName name="java.util.Vector"/>
-    <fullyQualifiedTypeName name="guestbook.GuestBookBean"/>
 </qualifiedTypeNameHistroy>

@@ -1,8 +1,11 @@
 <!-- showGuestBook.jsp -->
+<%@page import="guestbook.CommentBean"%>
+<%@page import="guestbook.CommentMgr"%>
 <%@page import="java.util.Vector"%>
 <%@page import="guestbook.GuestBookBean"%>
 <%@page contentType="text/html; charset=UTF-8"%>
 <jsp:useBean id="mgr" class="guestbook.GuestBookMgr"/>
+<jsp:useBean id="cmgr" class="guestbook.CommentMgr"/>
 <%
 	String id = (String)session.getAttribute("idKey");
 	if(id==null){
@@ -19,6 +22,27 @@
 		url = "updateGuestBook.jsp?num="+num;
 		window.open(url,"GuestBook Update","width=540, height=300");
 	}
+	function commentFn(frm){
+		if(frm.comment.value==""){
+			alert("댓글을 입력하세요.");
+			frm.comment.focus();
+			return;
+		}
+		frm.submit();
+	}
+	function disFn(num){
+		var v = "cmt"+num;
+		var e = document.getElementById(v);
+		if(e.style.display=='none')
+			e.style.display='block';//보이는 것
+		else
+			e.style.display='none';//안보임	
+	}
+	function delFn(cnum){
+		document.delFrm.action="commentProc.jsp";
+		document.delFrm.cnum.value = cnum;
+		document.delFrm.submit();
+	}
 </script>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -30,6 +54,7 @@
 		<td><b><%=login.getName()%></b></td>
 		<td align="right"><a href="logout.jsp">로그아웃</a></b></td>
 	</tr>
+	
 </table>
 <!-- GuestBook List Start -->
 <%
@@ -103,10 +128,84 @@
 		</td>
 	</tr>
 </table>
+<!-- Comment List Start -->
+<div id="cmt<%=bean.getNum()%>" sytle="display:none">
+<%
+	Vector<CommentBean> cvlist = cmgr.listComment(bean.getNum());
+	//out.print(cvlist.size());
+	if(!cvlist.isEmpty()){
+%>
+		<table width="500" bgcolor="#F5F5F5" >
+		<%			
+			for(int j=0;j<cvlist.size();j++){
+				CommentBean cbean = cvlist.get(j);
+		%>
+			<tr>
+				<td>
+					<table width="500">
+						<tr>
+							<td><b><%=cbean.getCid()%></b>	</td>
+							<td align="right">
+							<!-- 삭제는 로그인id와 댓글 쓴 id가 동일 -->
+							<%if(id.equals(cbean.getCid())) {%>
+							<%-- <a href="commentProc.jsp?flag=delete&cnum=
+							<%=cbean.getCnum()%>">[삭제]</a> --%>
+							<a href="#" onclick="delFn('<%=cbean.getCnum()%>')">[삭제]</a>
+							<%} %>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2"><%=cbean.getComment() %></td>
+						</tr>
+						<tr>
+							<td><%=cbean.getCip()%></td>
+							<td align="right"><%=cbean.getCregDate()%></td>
+						</tr>
+					</table>
+				<hr>	
+				</td>
+			</tr>
+		<%}//---for(Comment)%>
+		</table>
+<% 	}//--if(comment)%>
+</div>
+<!-- Comment List End -->
+<table width="500">
+<tr><td>
+	<button onclick="disFn('<%=bean.getNum()%>')">
+	댓글<%=cvlist.isEmpty()?"":cvlist.size() %></button>
+</td></tr>
+</table>
+<!-- Comment Form Start -->
+<form name="cFrm" method="post" action="commentProc.jsp">
+<table>
+	<tr>
+		<td>
+			<textarea placeholder="댓글입력..." name="comment" rows="2" 
+			cols="65" maxlength="1000"></textarea>
+		</td>
+		<td>
+			<input type="button" value="댓글" onclick="commentFn(this.form)">
+			<input type="hidden" name="flag" value="insert">
+			<!-- 방명록 글번호 -->
+			<input type="hidden" name="num" value="<%=bean.getNum()%>">
+			<!-- 로그인 id -->
+			<input type="hidden" name="cid" value="<%=login.getId()%>">
+			<!-- 댓글 입력 ip 주소 -->
+			<input type="hidden" name="cip" value="<%=request.getRemoteAddr()%>">
+		</td>
+	</tr>
+</table>	
+</form>
+<!-- Comment Form End -->
 <% 
 		}//-- GuestBook for
 	}//-- GuestBook if-else%>
 <!-- GuestBook List End -->
+<form method="post" name="delFrm">
+<input type="hidden" name="flag" value="delete">
+<input type="hidden" name="cnum">
+</form>
 </div>
 </body>
 </html>

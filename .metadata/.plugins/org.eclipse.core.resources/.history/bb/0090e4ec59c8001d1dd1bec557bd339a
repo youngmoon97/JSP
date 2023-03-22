@@ -1,0 +1,15 @@
+<!-- guestbook/commentProc.jsp -->
+<%@ page contentType="text/html; charset=UTF-8"%>
+<jsp:useBean id="cmgr" class="guestbook.commentMgr"/>
+<jsp:useBean id="mgr" class="guestbook.GuestBookMgr"/>
+<jsp:useBean id="cbean" class="guestbook.CommentBean"/>
+<%
+	String flag = request.getParameter("flag");
+	if(flag.equals("insert")){
+		cmgr.insertComment(cbean);
+	}else if(flag.equals("delete")){
+		cmgr.deleteComment(cbean.getCnum());		
+	}
+	response.sendRedirect("showGuestBook.jsp");
+	
+%>
