@@ -1,0 +1,12 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<jsp:useBean id="mgr" class="ch14.MemberMgr"/>
+<jsp:useBean id="bean" class="ch14.MemberBean"/>
+<%
+	//가입을 하고 실패하면 가입실패 알림 member.jsp 응답
+	//가입을 하고 성공하면 가입성공 후에 login.jsp 응답(session에 id값 저장)
+	if(mgr.insertMember(bean)){//성공
+		response.sendRedirect("login.jsp");
+	}else{//실패
+		response.sendRedirect("member.jsp");
+	}
+%>

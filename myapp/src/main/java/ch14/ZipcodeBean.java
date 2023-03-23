@@ -5,6 +5,18 @@ public class ZipcodeBean {
 	String area1;
 	String area2;
 	String area3;
+	
+	public ZipcodeBean() {
+		// TODO Auto-generated constructor stub
+	}
+	//gettersetter 방법이 아닌 생성자를 통해 set하기
+	public ZipcodeBean(String zipcode, String area1,String area2,String area3) {
+		this.zipcode = zipcode;
+		this.area1 = area1;
+		this.area2 = area2;
+		this.area3 = area3;
+	}
+	
 	public String getZipcode() {
 		return zipcode;
 	}

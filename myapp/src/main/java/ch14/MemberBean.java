@@ -9,10 +9,16 @@ public class MemberBean {
 	private String email;
 	private String zipcode;
 	private String address;
-	private String hobby;
+	private String hobby[];
 	private String job;
 	public String getId() {
 		return id;
+	}
+	public String[] getHobby() {
+		return hobby;
+	}
+	public void setHobby(String[] hobby) {
+		this.hobby = hobby;
 	}
 	public void setId(String id) {
 		this.id = id;
@@ -59,12 +65,7 @@ public class MemberBean {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getHobby() {
-		return hobby;
-	}
-	public void setHobby(String hobby) {
-		this.hobby = hobby;
-	}
+
 	public String getJob() {
 		return job;
 	}
