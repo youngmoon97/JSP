@@ -1,4 +1,0 @@
-<!-- ch09/scopeBean.jsp -->
-<%@ page contentType="text/html; charset=UTF-8"%>
-<jsp:useBean id="pbean" class="ch09.ScopeBean" scope="page"/>
-<jsp:useBean id="sbean" class="ch09.ScopeBean" scope="session"/>

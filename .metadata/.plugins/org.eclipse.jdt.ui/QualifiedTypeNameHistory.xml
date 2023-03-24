@@ -11,9 +11,12 @@
     <fullyQualifiedTypeName name="ch09.TeamMgr"/>
     <fullyQualifiedTypeName name="guestbook.GuestBookBean"/>
     <fullyQualifiedTypeName name="guestbook.DBConnectionMgr"/>
-    <fullyQualifiedTypeName name="java.util.Vector"/>
     <fullyQualifiedTypeName name="guestbook.CommentBean"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="org.apache.tomcat.dbcp.dbcp2.PStmtKey"/>
+    <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="ch14.ZipcodeBean"/>
+    <fullyQualifiedTypeName name="ch14.MemberBean"/>
 </qualifiedTypeNameHistroy>

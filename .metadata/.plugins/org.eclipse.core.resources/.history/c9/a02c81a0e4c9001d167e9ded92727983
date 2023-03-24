@@ -1,0 +1,12 @@
+package ch13;
+
+import ch14.DBConnectionMgr;
+
+public class FileloadMgr {
+	private DBConnectionMgr pool;
+	
+	public FileloadMgr() {
+	// TODO Auto-generated constructor stub
+	}	
+	//
+}

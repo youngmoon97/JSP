@@ -1,0 +1,63 @@
+package ch13;
+
+import java.io.File;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import javax.servlet.http.HttpServletRequest;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
+import ch14.DBConnectionMgr;
+
+public class FileloadMgr {
+	private DBConnectionMgr pool;
+	//업로드 파일 저장 위치
+	public static final String SAVEFOLDER = "C:/Jsp/myapp/src/main/webapp/ch13/storage";
+	//업로드 파일명 인코딩
+	public static final String ENCODING = "UTF-8";
+	//업로드 파일 크기
+	public static final int MAXSIZE = 1024*1024*20;	//20MB
+	
+	public FileloadMgr() {
+		pool = DBConnectionMgr.getInstance();
+	}	
+	//파일 저장 file save
+	public void uploadFile(HttpServletRequest req) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		try {
+			MultipartRequest multi = 
+					new MultipartRequest(
+							req,
+							SAVEFOLDER,
+							MAXSIZE, 
+							ENCODING, 
+							new DefaultFileRenamePolicy()
+							);
+			String upFile = multi.getFilesystemName("upFile");
+			File f = multi.getFile("upFile");
+			long size = f.length();
+			con = pool.getConnection();
+			sql = "insert tblFileload(upFile, size) values(?,?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, upFile);
+			pstmt.setLong(2, size);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt);
+		}
+		return;
+		
+	}
+	// file list
+	
+	// file delete : multi delete
+	
+	// file infomation
+	
+}

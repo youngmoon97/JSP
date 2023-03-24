@@ -1,9 +1,0 @@
-<!-- ch12/loginProc.jsp -->
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%
-	String id = request.getParameter("id");
-	String pwd = request.getParameter("pwd");
-	//DB에 왔다 갔다 가정하고~
-	boolean result = true;
-	
-%>
