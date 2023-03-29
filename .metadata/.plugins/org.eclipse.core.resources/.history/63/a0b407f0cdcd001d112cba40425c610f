@@ -1,0 +1,19 @@
+package ch15;
+
+import java.util.*;
+
+public class BoardBean {
+	int num;
+	String name;
+	String subject;
+	String content;
+	int pos;
+	int ref;
+	int depth;
+	Date regdate;
+	String pass;
+	String ip;
+	int count;
+	String filename;
+	int filesize;
+}

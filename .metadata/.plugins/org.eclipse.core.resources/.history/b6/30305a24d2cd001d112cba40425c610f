@@ -1,0 +1,14 @@
+package ch15;
+
+public class BoardMgr {
+	private DBConnectionMgr pool;
+
+	public static final String SAVEFOLDER = "C:/Jsp/myapp/src/main/webapp/ch15/fileuploade/";	
+	public static final String ENCODING = "UTF-8";
+	public static final int MAXSIZE = 1024*1024*20;	//20MB
+	
+	public BoardMgr() {
+		pool = DBConnectionMgr.getInstance();
+	}
+		
+}

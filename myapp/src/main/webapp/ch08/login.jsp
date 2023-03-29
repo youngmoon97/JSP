@@ -19,6 +19,3 @@ pwd : <input type="password" name="pwd"><br/>
 </form>
 <%}%>
 
-
-
-

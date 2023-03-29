@@ -514,3 +514,19 @@
 127.0.0.1 - - [24/Mar/2023:16:21:52 +0900] "GET / HTTP/1.1" 404 807
 127.0.0.1 - - [24/Mar/2023:16:21:54 +0900] "GET /myapp/ch08/login.jsp HTTP/1.1" 200 240
 127.0.0.1 - - [24/Mar/2023:16:22:02 +0900] "POST /myapp/ch08/loginServlet HTTP/1.1" 404 838
+127.0.0.1 - - [24/Mar/2023:16:33:14 +0900] "GET / HTTP/1.1" 404 807
+127.0.0.1 - - [24/Mar/2023:16:33:15 +0900] "GET /myapp/ch08/login.jsp HTTP/1.1" 200 240
+127.0.0.1 - - [24/Mar/2023:16:33:20 +0900] "POST /myapp/ch08/loginServlet HTTP/1.1" 302 -
+127.0.0.1 - - [24/Mar/2023:16:33:20 +0900] "GET /myapp/ch08/login.jsp HTTP/1.1" 200 131
+175.107.1.238 - - [24/Mar/2023:16:39:10 +0900] "POST /GponForm/diag_Form?images/ HTTP/1.1" 404 829
+175.107.1.238 - - [24/Mar/2023:16:39:10 +0900] "-" 400 2163
+178.79.164.244 - - [24/Mar/2023:16:49:11 +0900] "GET / HTTP/1.1" 404 807
+162.243.150.9 - - [24/Mar/2023:16:55:40 +0900] "GET / HTTP/1.1" 404 807
+127.0.0.1 - - [24/Mar/2023:17:14:03 +0900] "GET /myapp/ch08/getJsp.jsp HTTP/1.1" 200 210
+127.0.0.1 - - [24/Mar/2023:17:14:04 +0900] "GET /myapp/ch08/getServlet?msg=%EC%B6%95%ED%95%98%7E+%EC%BD%94%EB%A1%9C%EB%82%98+%EC%A2%85%EC%8B%9D HTTP/1.1" 200 54
+127.0.0.1 - - [24/Mar/2023:17:14:28 +0900] "GET /myapp/ch08/getServlet?msg=%EC%B6%95%ED%95%98%7E+%EC%BD%94%EB%A1%9C%EB%82%98+%EC%A2%85%EC%8B%9D HTTP/1.1" 200 54
+127.0.0.1 - - [24/Mar/2023:17:14:40 +0900] "GET /myapp/ch08/postJsp.jsp HTTP/1.1" 200 324
+127.0.0.1 - - [24/Mar/2023:17:15:04 +0900] "POST /myapp/ch08/postServlet HTTP/1.1" 200 72
+127.0.0.1 - - [24/Mar/2023:17:15:28 +0900] "GET /myapp/ch08/login.jsp HTTP/1.1" 200 240
+127.0.0.1 - - [24/Mar/2023:17:15:53 +0900] "POST /myapp/ch08/loginServlet HTTP/1.1" 302 -
+127.0.0.1 - - [24/Mar/2023:17:15:53 +0900] "GET /myapp/ch08/login.jsp HTTP/1.1" 200 132

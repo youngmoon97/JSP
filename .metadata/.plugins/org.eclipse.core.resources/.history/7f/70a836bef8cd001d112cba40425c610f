@@ -1,0 +1,78 @@
+<%@page import="ch15.UtilMgr"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<jsp:useBean id="mgr" class="ch15.BoardMgr"/>
+<%
+	int totalRecord = 0;	// 총 게시물 수
+	int numPerPage = 10;	// 페이지 당 게시물 개수(5,10,20,30)
+	int pagePerBlock = 15;	// 페이지 모음 블록
+	int totalPage = 0;		// 총 페이지 개수
+	int totalBlock = 0;		// 총 블럭 개수
+	int nowPage = 1;		// 현재 페이지
+	int nowBlock = 1;		// 현재 블록
+	
+	// 요청된 numPerPage 처리
+	
+	// 검색에 필요한 변수
+	String keyField = "", keyWord = "";
+	if(request.getParameter("keyWord")!=null){
+		keyField = request.getParameter("keyField");
+		keyWord = request.getParameter("keyWord");
+	}
+	
+	// 검색 후에 다시 reset 요청
+	
+	totalRecord = mgr.getTotalCount(keyField, keyWord);
+	//out.print(totalRecord);
+	if(request.getParameter("nowPage")!=null){
+		nowPage = UtilMgr.parseInt(request, "nowPage");
+	}
+	// sql문에 들어가는 start, cnt선언
+	int start = (nowPage*numPerPage)-numPerPage;
+	int cnt = numPerPage;
+	
+	// 전체 페이지 개수
+	totalPage = (int)Math.ceil((double)totalRecord/numPerPage);
+	// 전체 블록 개수
+	totalBlock = (int)Math.ceil((double)totalRecord/pagePerBlock);
+	// 현재 블럭 개수
+	nowBlock = (int)Math.ceil((double)nowPage/pagePerBlock);
+	//out.println("totalPage : "+totalPage+"<br>");
+	//out.println("totalBlock : "+totalBlock+"<br>");
+	//out.println("nowBlock : "+nowBlock+"<br>");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSP Board</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+
+</script>
+</head>
+<body bgcolor="#FFFFCC" >
+<div align="center"><br/>
+<h2>JSP Board</h2><br/>
+<table>
+	<tr>
+		<td width="600">
+		Total : <%=totalRecord%>Articles(<font color="red">
+		<%=nowPage+"/"+totalPage%>Pages</font>)
+		</td>
+	</tr>
+</table>
+
+<form name="listFrm" method="post">
+	<input type="hidden" name="reload" value="true">
+	<input type="hidden" name="nowPage" value="1">
+</form>
+
+<form name="readFrm">
+	<input type="hidden" name="nowPage" value="<%=nowPage%>">
+	<input type="hidden" name="numPerPage" value="<%=numPerPage%>">
+	<input type="hidden" name="keyField" value="<%=keyField%>">
+	<input type="hidden" name="keyWord" value="<%=keyWord%>">
+	<input type="hidden" name="num">
+</form>
+</div>
+</body>
+</html>

@@ -1,8 +1,0 @@
-<!-- guestbook/commentProc.jsp -->
-<%@ page contentType="text/html; charset=UTF-8"%>
-<jsp:useBean id="cmgr" class="guestbook/commentMgr"/>
-<jsp:useBean id="mgr" class="guestbook/GuestBookMgr"/>
-<jsp:useBean id="cbean" class="guestbook/CommentBean"/>
-<%
-		
-%>
