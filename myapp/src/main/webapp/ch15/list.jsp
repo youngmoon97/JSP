@@ -1,3 +1,4 @@
+<%@page import="com.mysql.cj.util.Util"%>
 <%@page import="ch15.BoardBean"%>
 <%@page import="java.util.Vector"%>
 <%@page import="ch15.UtilMgr"%>
@@ -13,6 +14,9 @@
 	int nowBlock = 1;		// 현재 블록
 	
 	// 요청된 numPerPage 처리
+	if(request.getParameter("numPerPage")!=null){
+		numPerPage = UtilMgr.parseInt(request, "numPerPage");
+	}
 	
 	// 검색에 필요한 변수
 	String keyField = "", keyWord = "";
@@ -22,6 +26,11 @@
 	}
 	
 	// 검색 후에 다시 reset 요청
+	if(request.getParameter("reload")!=null&&
+		request.getParameter("reload").equals("true")){
+		keyField=""; keyWord="";
+	}
+	
 	
 	totalRecord = mgr.getTotalCount(keyField, keyWord);
 	//out.print(totalRecord);
@@ -56,6 +65,30 @@
 		document.readFrm.nowPage.value = page;
 		document.readFrm.submit();
 	}
+	function check() {
+		if(document.searchFrm.keyWord.value==""){
+			alert("검색어를 입력하세요.");
+			document.searchFrm.keyWord.focus();
+			return;
+		}
+		document.searchFrm.submit();
+	}
+	
+	function list() {
+		document.listFrm.action = "list.jsp";
+		document.listFrm.submit();
+	}
+	function numPerFn(numPerPage){
+		//alert(numPerPage);
+		document.readFrm.action="list.jsp";
+		document.readFrm.numPerPage.value=numPerPage;
+		document.readFrm.submit();
+	}
+	function read(num){
+		document.readFrm.num.value=num;
+		document.readFrm.action="read.jsp";
+		document.readFrm.submit();
+	}
 </script>
 </head>
 <body bgcolor="#FFFFCC" >
@@ -66,6 +99,18 @@
 		<td width="600">
 		Total : <%=totalRecord%>Articles(<font color="red">
 		<%=nowPage+"/"+totalPage%>Pages</font>)
+		</td>
+		<td align="right">
+		<form name="npFrm" method="post">
+				<select name="numPerPage" size="1"
+				onchange="javascript:numPerFn(this.form.numPerPage.value)">
+    				<option value="5">5개 보기</option>
+    				<option value="10" selected>10개 보기</option>
+    				<option value="15">15개 보기</option>
+    				<option value="30">30개 보기</option>
+   				</select>
+   				<script>document.npFrm.numPerPage.value=<%=numPerPage%></script>
+   			</form>
 		</td>
 	</tr>
 </table>
@@ -101,7 +146,15 @@
 				%>
 				<tr align="center">
 					<td><%=totalRecord-start-i %></td>
-					<td align="left"><%=subject %></td>
+					<td align="left">
+					<a href="javascript:read('<%=num %>')">
+					<%=subject %>
+					</a>
+						<%if(filename!=null&&!filename.equals("")){ %>
+							<img alt="첨부파일" src="img/icon.gif" align="middle">
+						<%} %>
+						
+					</td>
 					<td><%=name %></td>
 					<td><%=regdate %></td>
 					<td><%=count %></td>					
@@ -147,6 +200,23 @@
 		</td>
 	</tr>
 </table>
+<form  name="searchFrm">
+	<table  width="600" cellpadding="4" cellspacing="0">
+ 		<tr>
+  			<td align="center" valign="bottom">
+   				<select name="keyField" size="1" >
+    				<option value="name"> 이 름</option>
+    				<option value="subject"> 제 목</option>
+    				<option value="content"> 내 용</option>
+   				</select>
+   				<input size="16" name="keyWord">
+   				<input type="button"  value="찾기" onClick="javascript:check()">
+   				<input type="hidden" name="nowPage" value="1">
+  			</td>
+ 		</tr>
+	</table>
+</form>
+<hr width="750">
 
 <form name="listFrm" method="post">
 	<input type="hidden" name="reload" value="true">

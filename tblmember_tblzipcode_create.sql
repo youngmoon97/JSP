@@ -14,7 +14,7 @@ CREATE TABLE `tblMember` (
   PRIMARY KEY (`id`)
 )COLLATE='euckr_korean_ci';
 
-DROP TABLE IFmydb2mydb2mydb2 EXISTS tblZipcode;
+DROP TABLE IF EXISTS tblZipcode;
 
 CREATE TABLE `tblZipcode` (
   `zipcode` char(5) NOT NULL,
