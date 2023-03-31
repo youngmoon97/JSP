@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS tblBoard;
 
-CREATE TABLE `tblBoard` (mydb2
+CREATE TABLE `tblBoard` (
 	`num`               int(11)              NOT NULL  auto_increment  ,
 	`name`              varchar(20)                    ,
 	`subject`           varchar(50)                    ,

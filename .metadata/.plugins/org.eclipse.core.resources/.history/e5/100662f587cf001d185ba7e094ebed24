@@ -1,0 +1,9 @@
+package ch16;
+
+public class PollItemBean {
+	//item은 배열로 선언
+	int listnum;
+	int itemnum;
+	String[] item;
+	int count;
+}

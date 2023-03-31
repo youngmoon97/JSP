@@ -1,8 +1,0 @@
-<%@page import="ch13.FileloadBean"%>
-<%@page import="java.util.Vector"%>
-<%@ page contentType="text/html; charset=UTF-8"%>
-<jsp:useBean id="mgr" class="ch13.FileloadMgr"/>
-<% %>
-	Vector<FileloadBean> vlist = mgr.listFile();
-	out.print(vlist.size());
-%>

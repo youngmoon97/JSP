@@ -1,0 +1,9 @@
+package ch15;
+
+public class BCommentMgr {
+	private DBConnectionMgr pool;
+	
+	public BCommentMgr() {
+		pool = DBConnectionMgr.getInstance();
+	}
+}

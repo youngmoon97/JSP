@@ -297,8 +297,52 @@ public class BoardMgr {
 		return;
 	}
 	// board Reply : 답변글 입력
-	// board Reply Up : 답변글 위치값 수정
+	public void replyBoard(BoardBean bean) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "insert tblBoard(name,content,subject,ref,pos,depth,regdate,"
+					+ "pass,count,ip)values(?, ?, ?, ?, ?, ?, now(), ?, 0, ?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, bean.getName());
+			pstmt.setString(2, bean.getContent());
+			pstmt.setString(3, bean.getSubject());
+			////
+			pstmt.setInt(4, bean.getRef()); // 원글과 동일한 ref 값(그룹을 위한 값)
+			pstmt.setInt(5, bean.getPos()+1); // 원글 pos+1(정렬을 위한 값)
+			pstmt.setInt(6, bean.getDepth()+1); // 원글 depth+1
+			///
+			pstmt.setString(7, bean.getPass());
+			pstmt.setString(8, bean.getIp());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt);
+		}
+	}
 	
+	// board Reply Up : 답변글 위치값 수정
+	public void replyUpBoard(int ref, int pos) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "update tblboard set pos=pos+1 where ref = ? and pos > ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, ref);
+			pstmt.setInt(2, pos);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt);
+		}
+		return;
+	}
 	// 게시물 1000개 입력
 	public void post1000(){
 		Connection con = null;

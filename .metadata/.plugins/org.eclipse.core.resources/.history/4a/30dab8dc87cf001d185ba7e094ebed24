@@ -1,0 +1,12 @@
+package ch16;
+
+public class PollListBean {
+	int num;
+	String question;
+	String sdate;
+	String edate;
+	String wdate;
+	int type;
+	int active;
+	
+}

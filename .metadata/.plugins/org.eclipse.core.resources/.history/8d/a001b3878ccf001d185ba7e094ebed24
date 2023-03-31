@@ -1,0 +1,9 @@
+package ch16;
+
+public class PollMgr {
+	private DBConnectionMgr pool;
+	
+	public PollMgr() {
+		pool = DBConnectionMgr.getInstance();
+	}
+}
