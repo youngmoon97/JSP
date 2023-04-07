@@ -33,9 +33,18 @@
     <fullyQualifiedTypeName name="ch15.BCommentMgr"/>
     <fullyQualifiedTypeName name="ch16.DBConnectionMgr"/>
     <fullyQualifiedTypeName name="ch16.ConnectionObject"/>
+    <fullyQualifiedTypeName name="ch16.PollListBean"/>
+    <fullyQualifiedTypeName name="java.net.PasswordAuthentication"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.xdevapi.Session"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.Session"/>
+    <fullyQualifiedTypeName name="java.net.Authenticator"/>
+    <fullyQualifiedTypeName name="shop.ProductBean"/>
+    <fullyQualifiedTypeName name="java.util.Hashtable"/>
+    <fullyQualifiedTypeName name="javax.net.ssl.HandshakeCompletedEvent"/>
+    <fullyQualifiedTypeName name="shop.OrderBean"/>
+    <fullyQualifiedTypeName name="shop.DBConnectionMgr"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.util.Vector"/>
-    <fullyQualifiedTypeName name="ch16.PollListBean"/>
 </qualifiedTypeNameHistroy>

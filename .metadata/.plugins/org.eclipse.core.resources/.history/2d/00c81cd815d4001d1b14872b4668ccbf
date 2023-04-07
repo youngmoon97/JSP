@@ -1,0 +1,26 @@
+package shop;
+
+import ch15.DBConnectionMgr;
+
+public class ProductMgr {
+	private DBConnectionMgr pool;
+
+	public static final String SAVEFOLDER = 
+			"C:/Jsp/myapp/src/main/webapp/ch16/shop/data/";	
+	public static final String ENCODING = "UTF-8";
+	public static final int MAXSIZE = 1024*1024*20;	//20MB
+	
+	public ProductMgr() {
+		pool = DBConnectionMgr.getInstance();
+	}
+	
+	//product List
+	//product Detail
+	//product stock reduce(구매->재고수정)
+	
+	//admin mode
+	
+	//product insert
+	//product update
+	//product delete
+}

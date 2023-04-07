@@ -1,0 +1,15 @@
+package shop;
+
+public class OrderMgr {
+	private DBConnectionMgr pool;
+	
+	public OrderMgr() {
+		pool = DBConnectionMgr.getInstance();
+	}
+	
+	//order insert
+	// 접수중(1), 접수(2), 입금확인(3), 배송준비(4), 배송중(5), 완료(6)
+	//order list
+
+
+}

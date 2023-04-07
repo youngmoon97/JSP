@@ -1,0 +1,6 @@
+package shop;
+
+//장바구니 기능 : DB연동X, 세션을 이용
+public class CartMgr {
+
+}
