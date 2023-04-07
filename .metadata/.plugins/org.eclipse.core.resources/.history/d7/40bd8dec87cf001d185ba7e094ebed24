@@ -1,5 +1,0 @@
-package ch16;
-
-public class PollItemBean {
-	//item은 배열로 선언
-}

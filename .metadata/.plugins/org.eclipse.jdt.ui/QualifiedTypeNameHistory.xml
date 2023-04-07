@@ -18,12 +18,9 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="ch15.DBConnectionMgr"/>
     <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
     <fullyQualifiedTypeName name="org.apache.catalina.ssi.SSICommand"/>
     <fullyQualifiedTypeName name="com.mysql.cj.util.Util"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-    <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="ch15.BoardBean"/>
     <fullyQualifiedTypeName name="ch15.BoardReplyServlet"/>
@@ -41,10 +38,15 @@
     <fullyQualifiedTypeName name="shop.ProductBean"/>
     <fullyQualifiedTypeName name="java.util.Hashtable"/>
     <fullyQualifiedTypeName name="javax.net.ssl.HandshakeCompletedEvent"/>
-    <fullyQualifiedTypeName name="shop.OrderBean"/>
     <fullyQualifiedTypeName name="shop.DBConnectionMgr"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="shop.UtilMgr"/>
     <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="shop.OrderBean"/>
+    <fullyQualifiedTypeName name="application1.DBConnectionMgr"/>
+    <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
 </qualifiedTypeNameHistroy>

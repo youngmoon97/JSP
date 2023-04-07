@@ -68,13 +68,105 @@ public class OrderMgr {
 	
 	// admin mode
 	// order all list
-	
+	public Vector<OrderBean> getAllOrderList(){
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		Vector<OrderBean> vlist = new Vector<OrderBean>();
+		try {
+			con = pool.getConnection();
+			sql = "select * from tblOrder order by no desc";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				//Lombok allargsConstructor
+				vlist.addElement(new OrderBean(
+						rs.getInt("no"),
+						rs.getInt("productNo"),
+						rs.getInt("quantity"),
+						rs.getString("date"),
+						rs.getString("state"),
+						rs.getString("id"))
+						);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return vlist;
+	}
 	// order detail
-	
+	public OrderBean getOrderDetail(int no) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		OrderBean order = new OrderBean();
+		try {
+			con = pool.getConnection();
+			sql = "select * from tblOrder where no = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				//Lombok allargsConstructor
+				order = new OrderBean(
+						rs.getInt("no"),
+						rs.getInt("productNo"),
+						rs.getInt("quantity"),
+						rs.getString("date"),
+						rs.getString("state"),
+						rs.getString("id")
+						);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return order;
+	}
 	// order upadte
-	
+	public boolean updateOrder(int no, String state) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		boolean flag = false;
+		try {
+			con = pool.getConnection();
+			sql = "update tblOrder set state = ? where no = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, state);
+			pstmt.setInt(2, no);
+			if(pstmt.executeUpdate()==1) flag = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt);
+		}
+		return flag;
+	}
 	// order delete
-	
+	public boolean deleteOrder(int no) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		boolean flag = false;
+		try {
+			con = pool.getConnection();
+			sql = "delete from tblOrder where no = ? ";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			if(pstmt.executeUpdate()==1) flag=true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt);
+		}
+		return flag;
+	}
 
 
 }
